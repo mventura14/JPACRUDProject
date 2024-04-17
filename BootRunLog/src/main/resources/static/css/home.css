@@ -1,0 +1,215 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    padding: .5em;
+}
+
+.addFormCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    width: 100%;
+    margin-bottom: .5em;
+
+
+    form>div {
+        display: flex;
+        flex-flow: row wrap;
+        background-color: grey;
+        border-radius: .3em;
+        min-width: 150px;
+        max-width: 700px;
+        gap: .2em;
+        justify-content: center;
+        margin: 0 auto;
+        border: 1px solid black;
+        padding: .3em;
+
+        div {
+            flex: 1 1 20%;
+            padding: .2em;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                text-align: center;
+
+            }
+
+            input,
+            textarea {
+                resize: none;
+                width: 100%;
+                padding: .2rem;
+                border-radius: .3em;
+                border: none;
+                box-shadow: 0 0 5px 1px black;
+            }
+
+            &:has(button) {
+                width: 100%;
+                max-width: unset;
+                flex: unset;
+            }
+
+            button {
+                width: 100%;
+                padding: .3em;
+                border-radius: .3em;
+                border:none;
+				box-shadow: 0 0 5px 1px black;
+            }
+        }
+
+    }
+}
+
+
+
+.logEntryContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5em;
+    width: 100%;
+
+    .logItem {
+        max-width: 700px;
+        width: 100%;
+        border: 2px solid black;
+        border-radius: .5rem;
+        padding: .5em;
+
+        >div {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+
+
+            label {
+                padding: 1em;
+
+            }
+        }
+        .detail {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+
+            div {
+                flex: 1 1 20%;
+                padding: .5rem;
+
+                p {
+                    text-align: center;
+
+                }
+
+                p+p {
+                    margin-top: .2em;
+                }
+
+                &:nth-child(5) {
+                    flex: unset;
+                    width: 100%;
+                    border-top: 1px solid black;
+
+                }
+            }
+
+            border-right: 1px solid black;
+        }
+
+
+
+        .editFormDisp {
+            background-color: grey;
+            border-top: 1px solid black;
+            display: flex;
+            flex-flow: row;
+            border-radius: 0 0 .3em .3em;
+
+            input[name="editSelection"] {
+                display: none;
+            }
+
+            display: none;
+
+            &:has(input[name="editSelection"]:checked) {
+                display: flex;
+            }
+
+            >div {
+                display: flex;
+                flex-flow: row nowrap;
+                width: 100%;
+                padding: 1em;
+                align-items: center;
+                gap: .5em;
+
+
+                .delete-btn {
+                    padding: .5em;
+                    background-color: red;
+                    border-radius: .5em;
+                }
+
+                form:First-Child {
+
+                    display: flex;
+                    flex-grow: 1;
+                    flex-flow: row wrap;
+                    justify-content: center;
+
+  					button {
+  						width: 100%;
+  						padding: .3em;
+                        margin: .5em auto;
+                        box-shadow: 0 0 5px 1px black;
+                    }
+
+
+                    div {
+                        width: 100%;
+                        display: flex;
+                        flex-flow: row wrap;
+                        gap: .2em;
+
+                        div {
+                            flex: 1 1 20%;
+                            flex-flow: column;
+                            align-items: center;
+
+                            input,
+                            textarea {
+                            	resize: none;
+              			  		width: 100%;
+                				padding: .2rem;
+                				border-radius: .3em;
+                				border: none;
+                				box-shadow: 0 0 5px 1px black;
+                            }
+
+                            label {
+                                text-align: center;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    p {
+                        width: 100%;
+                        text-align: center;
+
+                    }
+                }
+            }
+        }
+    }
+}
