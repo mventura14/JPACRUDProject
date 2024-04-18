@@ -7,11 +7,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Welcome to my Stuff</title>
+<title>Prog Log</title>
 <link rel="stylesheet" type="text/css" href="css/home.css">
 </head>
+
 <body>
+
 	<header></header>
+
 	<main>
 
 		<div class="addFormCont">
@@ -101,7 +104,7 @@
 								<div>
 									<div>
 										<label>Date</label>
-										<input type="date" maxlength="45" required name="date">
+										<input type="date" maxlength="45" required name="date" value="${log.date }">
 									</div>
 
 									<div>
