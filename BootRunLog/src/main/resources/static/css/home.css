@@ -4,80 +4,101 @@
     box-sizing: border-box;
 }
 
-main {
-    padding-top: 1em;
+body{
+	
+	background-color: #5fb0a2;
 }
 
-.addFormCont {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .5em;
+main {
+    padding: 1em;
+    width:100%;
+    
+    min-height: 100svh;
+}
+
+.addSearch {
+    min-width: 310px;
+    margin-bottom: .7em;
+
+    >div {
+        margin: 0 auto;
+        max-width: 700px;
+        padding: .7em;
+        border-radius: .6em;
+        box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px 1px #5fb0a2a4;
+
+        form:nth-child(1) {
+            width: fit-content;
+            margin: 0 auto;
+            padding-bottom: .7em;
+
+        }
+
+
+    }
+}
+
+.logForm {
     width: 100%;
-    margin-bottom: .5em;
+    padding: .7em;
+    border-top: 1px solid black;
 
-
-    form>div {
+    >div:nth-child(1 of div) {
+        width: 100%;
         display: flex;
         flex-flow: row wrap;
-        background-color: grey;
-        border-radius: .3em;
-        min-width: 150px;
-        max-width: 700px;
-        gap: .2em;
-        justify-content: center;
-        margin: 0 auto;
-        border: 1px solid black;
-        padding: .3em;
+        gap: .5em;
 
         div {
+            min-width: 100px;
             flex: 1 1 20%;
-            padding: .2em;
             display: flex;
-            flex-direction: column;
+            flex-flow: column;
 
             label {
+                padding: .3em;
+                text-align: center;
+            }
+
+            input {
+                width: 100%;
+                text-align: center;
+                padding: .1em;
+                height: 1.5rem;
+            }
+        }
+    }
+
+    >div:nth-child(2 of div) {
+
+        div {
+            display: flex;
+            flex-flow: column;
+            flex: 1;
+
+            label {
+                padding: .3em;
                 text-align: center;
 
-            }
-            
-            
 
-            input,
+            }
+
             textarea {
-                resize: none;
-                width: 100%;
-                padding: .2rem;
-                border-radius: .3em;
-                border: none;
-                box-shadow: 0 0 5px 1px black;
-            }
-            
-			input{
-            	text-align: center;
-            }
-            
-            &:has(button) {
-                width: 100%;
-                max-width: unset;
-                flex: unset;
+                padding: .1em;
+                resize: vertical;
             }
 
             button {
-                width: 100%;
+                margin-top: .7em;
                 padding: .3em;
-                border-radius: .3em;
-                border:none;
-				box-shadow: 0 0 5px 1px black;
             }
         }
 
     }
 }
 
-
-
 .logEntryContainer {
+    min-width: 310px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -91,137 +112,94 @@ main {
         border-radius: .5rem;
         padding: .5em;
 
-        > div {
+        .details {
             display: flex;
             flex-flow: row nowrap;
-            align-items: center;
 
 
-            label {
-                padding: 1em;
-                margin: .5em;
-                border-radius: .5em;
-                
-                box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.5), inset 0 0 10px 1px rgba(255, 255, 255, 0.5);
-
-            }
-        }
-        .detail {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            flex-flow: row wrap;
-
-            div {
-                flex: 1 1 20%;
-                padding: .5rem;
+            >div:nth-child(1 of div) {
+                width: 100%;
+                border-right: 1px solid black;
 
                 p {
                     text-align: center;
+                    padding: .2em;
                 }
 
-                p + p {
-                    margin-top: .2em;
+                p:nth-child(1 of p) {
+                    font-weight: 800;
                 }
 
-                &:nth-child(5) {
-                    flex: unset;
-                    width: 100%;
+                >div:nth-child(1 of div) {
+
+                    display: flex;
+
+                    div {
+                        flex: 1 1;
+                    }
+                }
+
+                >div:nth-child(2 of div) {
+                    padding: .7em;
                     border-top: 1px solid black;
-
+                    margin: 0 auto;
                 }
+
             }
 
-            border-right: 1px solid black;
+            >div:nth-child(2 of div) {
+                
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                border-radius: 0 .3em .3em 0;
+
+                label{
+                    height: 100%;
+                    line-height: 89px;
+                    padding: 1em;
+                    
+                    &:hover{
+                        background-color: aqua;
+                        filter: brightness(50%);
+                        cursor: pointer;
+                    }
+                    
+                }
+            }
         }
 
 
 
         .editFormDisp {
-            background-color: grey;
+            width: 100%;
             border-top: 1px solid black;
-            display: flex;
-            flex-flow: row;
-            border-radius: 0 0 .3em .3em;
+            display: none;
 
-            input[name="editSelection"] {
+            input[type="radio"] {
                 display: none;
             }
 
-            display: none;
+            form {
+                border: none;
+            }
 
-            &:has(input[name="editSelection"]:checked) {
-                display: flex;
+            &:has(input[type="radio"]:checked) {
+                display: block;
             }
 
             >div {
+                width: 100%;
                 display: flex;
                 flex-flow: row nowrap;
-                width: 100%;
-                padding: 1em;
                 align-items: center;
-                gap: .5em;
+            }
 
-
-                .delete-btn {
-                    padding: .5em;
-                    background-color: red;
-                    border-radius: .5em;
-                }
-
-                form:First-Child {
-
-                    display: flex;
-                    flex-grow: 1;
-                    flex-flow: row wrap;
-                    justify-content: center;
-
-  					button {
-  						width: 100%;
-  						padding: .3em;
-                        margin: .5em auto;
-                        box-shadow: 0 0 5px 1px black;
-                    }
-
-
-                    div {
-                        width: 100%;
-                        display: flex;
-                        flex-flow: row wrap;
-                        gap: .5em;
-
-                        div {
-                            flex: 1 1 20%;
-                            flex-flow: column;
-                            align-items: center;
-
-                            input,textarea {
-                            	resize: none;
-              			  		width: 100%;
-                				padding: .2rem;
-                				border-radius: .3em;
-                				border: none;
-                				box-shadow: 0 0 5px 1px black;
-                            }
-                            
-                            input{
-            					text-align: center;
-           					 }
-
-                            label {
-                                text-align: center;
-                                width: 100%;
-                            }
-                        }
-                    }
-
-                    p {
-                        width: 100%;
-                        text-align: center;
-
-                    }
-                }
+            p {
+                text-align: center;
             }
         }
+
     }
 }
